@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Written Digit Reco</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           background-color: aliceblue;
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar-logo {
+            font-size: 1.5rem;
+        }
+        .navbar-center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #4CAF50;
+        }
+        .navbar-links a:hover {
+            background-color: #45a049;
+        }
+        .navbar-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .signup-btn, .signin-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .signup-btn:hover, .signin-btn:hover {
+            background-color: #45a049;
+        }
+        .main-content {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Adjusted height to center the content */
+        }
+        .upload-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            padding: 20px 70px;
+        }
+        .upload-btn:hover {
+            background-color: #0056b3;
+           
+        }
+
+        .upload input{
+          padding: 50px;
+          font-size: 30px;
+          background-color: rgb(43, 43, 43);
+          border-radius: 20px;
+          border-color: black;
+          border-style: dotted;
+        }
+
+        .upload input:hover{
+          background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            Logo Here
+        </div>
+        <div class="navbar-center">
+            <div class="navbar-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <button class="signup-btn">Sign Up</button>
+            <button class="signin-btn">Sign In</button>
+        </div>
+    </div>
+    <div class="main-content">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="upload">
+          {{ form.as_p }}
+        </div>
+        <center><button class="upload-btn"> Upload Image </button></center>
+      </form>
+    </div>
+</body>
+</html>
+
